@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Descarga cozitas</title>
+    <title>Youtube downloader</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/0a6712d7ae.js" crossorigin="anonymous"></script>
@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <h1>Aki ze deskargan cozas</h1>
+        <h1>Convertidor YOUTUBE -> MP3</h1>
     </header>
 
     <div class="spacer layer"></div>
@@ -20,11 +20,11 @@
     <div class="main-container">
         <div id="url-form-container">
             <p class="error-box" id="url-error-box">
-                illo tu enlase no es ná, vuelve a ponerlo
+                Error en el enlace, vuelva a introducirlo
             </p>
             <form method="GET" class="convert-form">
-                <input type="text" name="url" id="url-text-input" placeholder="aki tiene ke pone tu enlase bb..">
-                <input type="submit" class="btn" id="submit-btn" name="submit" value="YA">
+                <input type="text" name="url" id="url-text-input" placeholder="Escribe aqui tu enlace..">
+                <input type="submit" class="btn" id="submit-btn" name="submit" value="Buscar">
             </form>
         </div>
      
@@ -34,26 +34,25 @@
         <div id="download-container">
             <div id="img-container">
                 <img id="thumbnail_img" src="" alt="thumbnail" width="600" >
-                
                 <p class="error-box" id="song-cut-time-error-box">
-                    illo has recortao mal el tiempo
+                    Error en el recorte de tiempo
                 </p>
                 <form class="song-cut-form">
                     <div>
-                        <p>Start</p>
+                        <p>Empiezo</p>
                         <input type="text" name="song-start" id="song-start-input" placeholder="0:00">
                     </div>
                     <div>
-                        <p>End</p>
+                        <p>Fin</p>
                         <input type="text" name="song-end" id="song-end-input" placeholder="0:00">
                     </div>
                 </form>
             </div>
             <div id="download-info-container">
                 <ul class="song-info-list">
-                    <li id="song-title">illo me da pereza escribir el nombre de la cancion</li>
-                    <li id="artist">esto e un artista</li>
-                    <li id="song-duration">durasion</li>
+                    <li id="song-title">Nombre de la canción demasiado largo</li>
+                    <li id="artist">Artista de la canción</li>
+                    <li id="song-duration">Duración</li>
                 </ul>
 
                 <select class="custom-select" name="bitrate-select" id="bitrate-select">
@@ -69,38 +68,15 @@
                 <div class="loading-ring" id="convert-ring"><div></div><div></div><div></div><div></div></div>
 
 
-                <button class="btn" id="convert-btn">conbertir</button>
+                <button class="btn" id="convert-btn">Convertir</button>
                 
                 <a id="download-btn" download href="" target="_blank">
-                    <button class="btn">deskargar viruz 😈</button>
+                    <button class="btn">Descargar</button>
                 </a>
             </div>
         </div>
        
         <div class="info-container">
-            <div class="card">
-                <h3>Instruksiones por zi ere tonto:</h3>
-                <ol>
-                    <li>pega el enlase en el cuadrito ese blanco pa escribir</li>
-                    <li>zi kiere recorta la cansion po ponle los minutos abajo</li>
-                    <li>luego elije una belosidad de deskarga</li>
-                    <li>le das en convertir</li>
-                    <li>le das en descargar</li>
-                    <li>y listo illo pa ti la cansion</li>
-                </ol>
-            </div>
-
-            <div class="card">
-                <h3>carakteristikas</h3>
-                <ul>
-                    <li>pone informasion al archivo</li>
-                    <li>musha calidá</li>
-                    <li>más calidá</li>
-                    <li>zin tonterias</li>
-                    <li>eh grati, como te gusta :)</li>
-                    <li>muchizimo grati</li>
-                </ul>
-            </div>
         </div>
     </div>
     <div class="spacer layer flip"></div>
