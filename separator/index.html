@@ -25,10 +25,29 @@
       font-size: 14px;
       line-height: 1.6;
     }
+    .me,
+    .me:active,
+    .me:visited,
+    .me:hover {
+    display:inline-block;
+    width:60px;
+    height:28px;
+
+    font-size: 0;
+    text-shadow: none;
+    color: #294995;
+
+    background: url("me.png") no-repeat;
+    background-size: 60px 28px;
+
+    vertical-align:middle;
+    text-decoration:none;
+}
+
   </style>
 </head>
 <body class="vscode-light">
-  <h1 id="bookmark-divider">Divisor de marcadores</h1>
+  <h1 id="bookmark-divider">Divisor de marcadores (<a class="me" href="" title="Drag me!">me</a>)</h1>
   <p>Un divisor de marcadores independientemente del navegador (Google Chrome, Firefox, Safari, Internet Explorer, Microsoft Edge).</p>
   <hr>
   <h2 id="use-case">Caso de uso</h2>
@@ -47,6 +66,7 @@
   </ol>
   <p><img src="md/named.png" alt="Named Divider"></p>
   <hr>
-  <p>Inspirado en <a href="https://github.com/FirePanther">FirePanthers</a> <a href="https://su.at/archive/bookmark/">https://su.at/archive/bookmark/</a>.</p>
+
+  <footer>Made by <a href="https://not5qw.ml">@5qw</a> | With ❤</footer>
 </body>
 </html>
