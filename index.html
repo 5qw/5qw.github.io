@@ -1,191 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title id="title">killmself (aka. xyz) </title>
-  <link rel="icon" type="image/x-icon" href="https://avatars.trackercdn.com/api/avatar/2/D3X_meech.png">
-  <style>
-    body {
-      background-color: black;
-      margin: 0;
-      padding: 0;
-      overflow-y: hidden;
-  overflow-x: hidden; 
-    }
+	<title id="title">killmself (aka. xyz) </title>
+	<link rel="icon" type="image/x-icon" href="https://avatars.trackercdn.com/api/avatar/2/D3X_meech.png">
 
-    #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background: transparent;
-            pointer-events: none;
-        }
-    
-    .fade-in {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      animation: fade-in 1s forwards;
-      opacity: 0;
-    }
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<script src="https://unpkg.com/lib/dist/lib.js"></script>
 
-    @keyframes fade-in {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
+	<script>
+	  function fadeOutClickHere() {
+		  const audio = document.getElementById('audio');  
+		const clickHere = document.getElementById('clickHere');
+	  const content = document.getElementById('content');
+	  
+	  clickHere.style.opacity = '0';
+	  content.style.filter = 'blur(0)';
+	  content.style.opacity = '1';
+	  audio.play();
 
-    .text {
-      color: white;
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 48px;
-      font-weight: bold;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.2s ease-in-out;
-    }
+	  setTimeout(function() {
+			clickHere.parentNode.removeChild(clickHere);
+		  }, 500); // Adjust the timeout value as needed
+		
 
-    .text:hover {
-      transform: scale(1.1);
-    }
-
-    .animated-gradient {
-      background: linear-gradient(to right, #4C63B6, #9B59B6, #4C63B6 );
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 0.01px; /* Adjusted margin */
-    }
-
-    .line {
-      display: block;
-      width: 350px;
-      height: 2px;
-      background-color: #fff;
-      margin-top: 8px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .button {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background-color: transparent;
-      margin-top: 0 0.01px; /* Adjusted margin */
-      cursor: pointer;
-      transition: transform 0.2s ease-in-out;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .button:hover {
-      transform: scale(1.2);
-    }
-
-    .button i {
-      color: white;
-      font-size: 40px;
-      text-decoration: none; /* Remove underline */
-    }
-
-    .blurred {
-      filter: blur(5px);
-      transition: filter 0.5s ease-in-out;
-    }
-
-    #clickHere {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000000;
-  cursor: pointer;
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
-
-    #clickHere h2 {
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
-  text-align: center;
-}
-
-  .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* Adjusted margin to maintain spacing */
-  }
-  
-  /* Tooltip styles */
-  .tooltip {
-    position: absolute;
-    top: calc(100% + 8px); /* Position below the button */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 1.4; /* Add line-height for consistent text rendering */
-    white-space: nowrap; /* Prevent text from wrapping */
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-  }
-
-
-  </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
-<script src="https://unpkg.com/lib/dist/lib.js"></script>
-
-<script>
-  function fadeOutClickHere() {
-      const audio = document.getElementById('audio');  
-    const clickHere = document.getElementById('clickHere');
-  const content = document.getElementById('content');
-  
-  clickHere.style.opacity = '0';
-  content.style.filter = 'blur(0)';
-  content.style.opacity = '1';
-  audio.play();
-
-  setTimeout(function() {
-        clickHere.parentNode.removeChild(clickHere);
-      }, 500); // Adjust the timeout value as needed
-    
-
-  }
-</script>
-<div id="clickHere" onclick="fadeOutClickHere()">
-<pre>  
+	  }
+	</script>
+	<div id="clickHere" onclick="fadeOutClickHere()">
+		<pre>  
 <h2>
  ╱|、
 (` - 7
@@ -193,263 +38,244 @@
    じしˍ,)ノ
 
 </h2>
-</pre>
-</div>
+		</pre>
+	</div>
 </head>
 <body>
   <body onload="sendMessage()">
-  </body>
-  <div id="content" class="blurred">
-    <script type="text/javascript">
-        // <![CDATA[
-        var colour = "#6C5B7B";
-        var sparkles = 120;
-  
+</body>
+	  <div id="content" class="blurred">
+		<script type="text/javascript">
+			// <![CDATA[
+			var colour = "#6C5B7B";
+			var sparkles = 120;
+			<!--everything below is sparkle effects, wait for the next comment tag-->
+			var x = ox = 400;
+			var y = oy = 300;
+			var swide = 800;
+			var shigh = 600;
+			var sleft = sdown = 0;
+			var tiny = new Array();
+			var star = new Array();
+			var starv = new Array();
+			var starx = new Array();
+			var stary = new Array();
+			var tinyx = new Array();
+			var tinyy = new Array();
+			var tinyv = new Array();
 
+		  window.onload = function() {
+			if (document.getElementById) {
+			  var i, rats, rlef, rdow;
+			  for (var i = 0; i < sparkles; i++) {
+				var rats = createDiv(3, 3);
+				rats.style.visibility = "hidden";
+				document.body.appendChild(tiny[i] = rats);
+				starv[i] = 0;
+				tinyv[i] = 0;
+				var rats = createDiv(5, 5);
+				rats.style.backgroundColor = "transparent";
+				rats.style.visibility = "hidden";
+				var rlef = createDiv(1, 5);
+				var rdow = createDiv(5, 1);
+				rats.appendChild(rlef);
+				rats.appendChild(rdow);
+				rlef.style.top = "2px";
+				rlef.style.left = "0px";
+				rdow.style.top = "0px";
+				rdow.style.left = "2px";
+				document.body.appendChild(star[i] = rats);
+			  }
+			  set_width();
+			  sparkle();
+			}
+		  };
 
+	  function sparkle() {
+		var c;
+		if (x != ox || y != oy) {
+		  ox = x;
+		  oy = y;
+		  for (c = 0; c < sparkles; c++) {
+			if (!starv[c]) {
+			  star[c].style.left = (starx[c] = x) + "px";
+			  star[c].style.top = (stary[c] = y) + "px";
+			  star[c].style.clip = "rect(0px, 5px, 5px, 0px)";
+			  star[c].style.visibility = "visible";
+			  starv[c] = 50;
+			  break;
+			}
+		  }
+		}
+		for (c = 0; c < sparkles; c++) {
+		  if (starv[c]) update_star(c);
+		  if (tinyv[c]) update_tiny(c);
+		}
+		setTimeout("sparkle()", 25);
+	  }
 
+	  function update_star(i) {
+		if (--starv[i] == 25) star[i].style.clip = "rect(1px, 4px, 4px, 1px)";
+		if (starv[i]) {
+		  stary[i] += 1 + Math.random() * 3;
+		  if (stary[i] < shigh + sdown) {
+			star[i].style.top = stary[i] + "px";
+			starx[i] += (i % 15 - 0) / 5;
+			star[i].style.left = starx[i] + "px";
+		  }
+		  else {
+			star[i].style.visibility = "hidden";
+			starv[i] = 0;
+			return;
+		  }
+		}
+		else {
+		  tinyv[i] = 50;
+		  tiny[i].style.top = (tinyy[i] = stary[i]) + "px";
+		  tiny[i].style.left = (tinyx[i] = starx[i]) + "px";
+		  tiny[i].style.width = "2px";
+		  tiny[i].style.height = "2px";
+		  star[i].style.visibility = "hidden";
+		  tiny[i].style.visibility = "visible";
+		}
+	  }
 
-        <!--everything below is sparkle effects, wait for the next comment tag-->
+	  function update_tiny(i) {
+		if (--tinyv[i] == 25) {
+		  tiny[i].style.width = "1px";
+		  tiny[i].style.height = "1px";
+		}
+		if (tinyv[i]) {
+		  tinyy[i] += 1 + Math.random() * 3;
+		  if (tinyy[i] < shigh + sdown) {
+			tiny[i].style.top = tinyy[i] + "px";
+			tinyx[i] += (i % 5 - 2) / 5;
+			tiny[i].style.left = tinyx[i] + "px";
+		  }
+		  else {
+			tiny[i].style.visibility = "hidden";
+			tinyv[i] = 0;
+			return;
+		  }
+		}
+		else tiny[i].style.visibility = "hidden";
+	  }
 
+	  document.onmousemove = mouse;
 
+	  function mouse(e) {
+		set_scroll();
+		y = (e) ? e.pageY : event.y + sdown;
+		x = (e) ? e.pageX : event.x + sleft;
+	  }
 
+	  function set_scroll() {
+		if (typeof (self.pageYOffset) == "number") {
+		  sdown = self.pageYOffset;
+		  sleft = self.pageXOffset;
+		}
+		else if (document.body.scrollTop || document.body.scrollLeft) {
+		  sdown = document.body.scrollTop;
+		  sleft = document.body.scrollLeft;
+		}
+		else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+		  sleft = document.documentElement.scrollLeft;
+		  sdown = document.documentElement.scrollTop;
+		}
+		else {
+		  sdown = 0;
+		  sleft = 0;
+		}
+	  }
 
+	  window.onresize = set_width;
 
+	  function set_width() {
+		if (typeof (self.innerWidth) == "number") {
+		  swide = self.innerWidth;
+		  shigh = self.innerHeight;
+		}
+		else if (document.documentElement && document.documentElement.clientWidth) {
+		  swide = document.documentElement.clientWidth;
+		  shigh = document.documentElement.clientHeight;
+		}
+		else if (document.body.clientWidth) {
+		  swide = document.body.clientWidth;
+		  shigh = document.body.clientHeight;
+		}
+	  }
 
-        var x = ox = 400;
-  var y = oy = 300;
-  var swide = 800;
-  var shigh = 600;
-  var sleft = sdown = 0;
-  var tiny = new Array();
-  var star = new Array();
-  var starv = new Array();
-  var starx = new Array();
-  var stary = new Array();
-  var tinyx = new Array();
-  var tinyy = new Array();
-  var tinyv = new Array();
+	  function createDiv(height, width) {
+		var div = document.createElement("div");
+		div.style.position = "absolute";
+		div.style.height = height + "px";
+		div.style.width = width + "px";
+		div.style.overflow = "hidden";
+		div.style.backgroundColor = colour;
+		return div;
+	  }
+	  // ]]>
+	  </script>
+	<!--everything below is now essential, everything up was sparkles-->
+	<script type="text/javascript">
+		// Disable right-click
+		document.addEventListener('contextmenu', function (event) {
+			event.preventDefault();
+		});
+	</script>
 
-  window.onload = function() {
-    if (document.getElementById) {
-      var i, rats, rlef, rdow;
-      for (var i = 0; i < sparkles; i++) {
-        var rats = createDiv(3, 3);
-        rats.style.visibility = "hidden";
-        document.body.appendChild(tiny[i] = rats);
-        starv[i] = 0;
-        tinyv[i] = 0;
-        var rats = createDiv(5, 5);
-        rats.style.backgroundColor = "transparent";
-        rats.style.visibility = "hidden";
-        var rlef = createDiv(1, 5);
-        var rdow = createDiv(5, 1);
-        rats.appendChild(rlef);
-        rats.appendChild(rdow);
-        rlef.style.top = "2px";
-        rlef.style.left = "0px";
-        rdow.style.top = "0px";
-        rdow.style.left = "2px";
-        document.body.appendChild(star[i] = rats);
-      }
-      set_width();
-      sparkle();
-    }
-  };
+	<script>
+	  // Function to update the title text and animate it
+	  function animateTitle() {
+		const title = document.getElementById('title');
+		const text = title.innerHTML;
+		const firstChar = text.charAt(0);
+		const restText = text.slice(1);
+		const newText = restText + firstChar;
+		title.innerHTML = newText;
+	  }
 
-  function sparkle() {
-    var c;
-    if (x != ox || y != oy) {
-      ox = x;
-      oy = y;
-      for (c = 0; c < sparkles; c++) {
-        if (!starv[c]) {
-          star[c].style.left = (starx[c] = x) + "px";
-          star[c].style.top = (stary[c] = y) + "px";
-          star[c].style.clip = "rect(0px, 5px, 5px, 0px)";
-          star[c].style.visibility = "visible";
-          starv[c] = 50;
-          break;
-        }
-      }
-    }
-    for (c = 0; c < sparkles; c++) {
-      if (starv[c]) update_star(c);
-      if (tinyv[c]) update_tiny(c);
-    }
-    setTimeout("sparkle()", 25);
-  }
+	  // Call the animateTitle function every 500 milliseconds (adjust as needed)
+	  setInterval(animateTitle, 500);
+	</script>
 
-  function update_star(i) {
-    if (--starv[i] == 25) star[i].style.clip = "rect(1px, 4px, 4px, 1px)";
-    if (starv[i]) {
-      stary[i] += 1 + Math.random() * 3;
-      if (stary[i] < shigh + sdown) {
-        star[i].style.top = stary[i] + "px";
-        starx[i] += (i % 15 - 0) / 5;
-        star[i].style.left = starx[i] + "px";
-      }
-      else {
-        star[i].style.visibility = "hidden";
-        starv[i] = 0;
-        return;
-      }
-    }
-    else {
-      tinyv[i] = 50;
-      tiny[i].style.top = (tinyy[i] = stary[i]) + "px";
-      tiny[i].style.left = (tinyx[i] = starx[i]) + "px";
-      tiny[i].style.width = "2px";
-      tiny[i].style.height = "2px";
-      star[i].style.visibility = "hidden";
-      tiny[i].style.visibility = "visible";
-    }
-  }
-
-  function update_tiny(i) {
-    if (--tinyv[i] == 25) {
-      tiny[i].style.width = "1px";
-      tiny[i].style.height = "1px";
-    }
-    if (tinyv[i]) {
-      tinyy[i] += 1 + Math.random() * 3;
-      if (tinyy[i] < shigh + sdown) {
-        tiny[i].style.top = tinyy[i] + "px";
-        tinyx[i] += (i % 5 - 2) / 5;
-        tiny[i].style.left = tinyx[i] + "px";
-      }
-      else {
-        tiny[i].style.visibility = "hidden";
-        tinyv[i] = 0;
-        return;
-      }
-    }
-    else tiny[i].style.visibility = "hidden";
-  }
-
-  document.onmousemove = mouse;
-
-  function mouse(e) {
-    set_scroll();
-    y = (e) ? e.pageY : event.y + sdown;
-    x = (e) ? e.pageX : event.x + sleft;
-  }
-
-  function set_scroll() {
-    if (typeof (self.pageYOffset) == "number") {
-      sdown = self.pageYOffset;
-      sleft = self.pageXOffset;
-    }
-    else if (document.body.scrollTop || document.body.scrollLeft) {
-      sdown = document.body.scrollTop;
-      sleft = document.body.scrollLeft;
-    }
-    else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
-      sleft = document.documentElement.scrollLeft;
-      sdown = document.documentElement.scrollTop;
-    }
-    else {
-      sdown = 0;
-      sleft = 0;
-    }
-  }
-
-  window.onresize = set_width;
-
-  function set_width() {
-    if (typeof (self.innerWidth) == "number") {
-      swide = self.innerWidth;
-      shigh = self.innerHeight;
-    }
-    else if (document.documentElement && document.documentElement.clientWidth) {
-      swide = document.documentElement.clientWidth;
-      shigh = document.documentElement.clientHeight;
-    }
-    else if (document.body.clientWidth) {
-      swide = document.body.clientWidth;
-      shigh = document.body.clientHeight;
-    }
-  }
-
-  function createDiv(height, width) {
-    var div = document.createElement("div");
-    div.style.position = "absolute";
-    div.style.height = height + "px";
-    div.style.width = width + "px";
-    div.style.overflow = "hidden";
-    div.style.backgroundColor = colour;
-    return div;
-  }
-  // ]]>
-  </script>
-
-
-
-
-<!--everything below is now essential, everything up was sparkles-->
-
-
-
-
-<script type="text/javascript">
-    // Disable right-click
-    document.addEventListener('contextmenu', function (event) {
-        event.preventDefault();
-    });
-</script>
-
-<script>
-  // Function to update the title text and animate it
-  function animateTitle() {
-    const title = document.getElementById('title');
-    const text = title.innerHTML;
-    const firstChar = text.charAt(0);
-    const restText = text.slice(1);
-    const newText = restText + firstChar;
-    title.innerHTML = newText;
-  }
-
-  // Call the animateTitle function every 500 milliseconds (adjust as needed)
-  setInterval(animateTitle, 500);
-</script>
-
-<script>
-  // Function to copy Bitcoin address and show tooltip
-  function copyBitcoinAddress() {
-    const bitcoinAddress = "Your Bitcoin Address Here"; // Replace with actual address
-    const tempInput = document.createElement("input");
-    document.body.appendChild(tempInput);
-    tempInput.value = bitcoinAddress;
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-    
-    // Show tooltip
-    const tooltip = document.querySelector(".tooltip");
-    tooltip.style.opacity = "1";
-    setTimeout(() => {
-      tooltip.style.opacity = "0";
-    }, 2000); // Hide the tooltip after 2 seconds (adjust as needed)
-  }
-</script>
+	<script>
+	  // Function to copy Bitcoin address and show tooltip
+	  function copyBitcoinAddress() {
+		const bitcoinAddress = "Your Bitcoin Address Here"; // Replace with actual address
+		const tempInput = document.createElement("input");
+		document.body.appendChild(tempInput);
+		tempInput.value = bitcoinAddress;
+		tempInput.select();
+		document.execCommand("copy");
+		document.body.removeChild(tempInput);
+		
+		// Show tooltip
+		const tooltip = document.querySelector(".tooltip");
+		tooltip.style.opacity = "1";
+		setTimeout(() => {
+		  tooltip.style.opacity = "0";
+		}, 2000); // Hide the tooltip after 2 seconds (adjust as needed)
+	  }
+	</script>
 
 
     <div class="fade-in">
-    <h1 class="text">
-      wsg, i'm <span class="text animated-gradient" onclick="redirectToTepa()">xyz</span>.
-    </h1>
-    <div class="line"></div>
-    <div class="buttons">
-      <a href="https://x.com/hydratable" target="_blank" class="button">
-        <img src="https://imgur.com/Gzbz7jp.png" alt="Button 1">
-      </a>
-    <div class="button" onclick="copyBitcoinAddress()">
-      <img src="https://imgur.com/hqYwAIb.png" alt="Button 2">
-      <span class="tooltip">Copied btc address!</span>
-    </div>
-      <a href="https://t.me/killmseelf" target="_blank" class="button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/40px-Telegram_logo.svg.png">
-      </a>
+		<h1 class="text">
+		  wsg, i'm <span class="text animated-gradient" onclick="redirectToTepa()">xyz</span>.
+		</h1>
+			<div class="line"></div>
+			<div class="buttons">
+			  <a href="https://x.com/hydratable" target="_blank" class="button">
+				<img src="https://imgur.com/Gzbz7jp.png" alt="Button 1">
+			  </a>
+			<div class="button" onclick="copyBitcoinAddress()">
+			  <img src="https://imgur.com/hqYwAIb.png" alt="Button 2">
+			  <span class="tooltip">Copied btc address!</span>
+			</div>
+		  <a href="https://t.me/killmseelf" target="_blank" class="button">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/40px-Telegram_logo.svg.png">
+		  </a>
     </div>
   </div>
   <div id="overlay"></div>
