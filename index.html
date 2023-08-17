@@ -5,6 +5,7 @@
 	<link rel="icon" type="image/x-icon" href="https://avatars.trackercdn.com/api/avatar/2/D3X_meech.png">
 
 	<link rel="stylesheet" href="assets/css/style.css">
+	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap" rel="stylesheet">
@@ -36,7 +37,8 @@
 (` - 7
 |、⁻〵
    じしˍ,)ノ
-
+Click anywhere to enter
+ (volume warning)
 </h2>
 		</pre>
 	</div>
@@ -242,7 +244,7 @@
 	<script>
 	  // Function to copy Bitcoin address and show tooltip
 	  function copyBitcoinAddress() {
-		const bitcoinAddress = "Your Bitcoin Address Here"; // Replace with actual address
+		const bitcoinAddress = "bc1q6hfl367ejea8mexz88qlnjryv4uexa0x230m4s";
 		const tempInput = document.createElement("input");
 		document.body.appendChild(tempInput);
 		tempInput.value = bitcoinAddress;
@@ -255,14 +257,14 @@
 		tooltip.style.opacity = "1";
 		setTimeout(() => {
 		  tooltip.style.opacity = "0";
-		}, 2000); // Hide the tooltip after 2 seconds (adjust as needed)
+		}, 450); // Hide the tooltip after 2 seconds (adjust as needed)
 	  }
 	</script>
 
 
     <div class="fade-in">
 		<h1 class="text">
-		  wsg, i'm <span class="text animated-gradient" onclick="redirectToTepa()">xyz</span>.
+		  wsg, i'm <span class="text animated-gradient animated-glow-background" onclick="redirectToTepa()">xyz</span>.
 		</h1>
 			<div class="line"></div>
 			<div class="buttons">
@@ -278,12 +280,69 @@
 		  </a>
     </div>
   </div>
-  <div id="overlay"></div>
-
+  
+      <div class="volume-control">
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="1" onchange="changeVolume()">
+    </div>
+  
   <audio id="audio" autoplay loop>
     <source src="https://cdn.discordapp.com/attachments/1127122034422452304/1135969529562935316/zqZEcsF.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+  
+  
+  <script>
+    const audio = document.getElementById('audio');
+    const volumeInput = document.getElementById('volume');
+
+    function changeVolume() {
+        audio.volume = volumeInput.value;
+    }
+
+    // Add mouse wheel event listener to control volume
+    document.addEventListener('wheel', handleMouseWheel);
+
+    function handleMouseWheel(event) {
+        const delta = Math.sign(event.deltaY);
+        const step = 0.1;
+
+        if (delta === -1 && audio.volume < 1) {
+            audio.volume = Math.min(1, audio.volume + step);
+            volumeInput.value = audio.volume;
+        } else if (delta === 1 && audio.volume > 0) {
+            audio.volume = Math.max(0, audio.volume - step);
+            volumeInput.value = audio.volume;
+        }
+    }
+</script>
+
+    <div id="cornerText" class="corner-text">
+        Control the volume with mouse wheel! 🔊
+    </div>
+
+    <script>
+        const cornerText = document.getElementById('cornerText');
+
+        // Hide the full text after 2 seconds, leaving only the emoji visible
+        setTimeout(function() {
+            cornerText.innerHTML = '🔊'; // Set the text to just the emoji
+            cornerText.style.opacity = '1'; // Make sure opacity is set to 1
+        }, 2500); // 2000 milliseconds = 2 seconds
+
+        // Show the full text when hovering over the emoji
+        cornerText.addEventListener('mouseenter', function() {
+            cornerText.innerHTML = 'Control the volume with mouse wheel! 🔊';
+            cornerText.style.opacity = '1';
+        });
+
+        // Hide the full text when not hovering over the emoji
+        cornerText.addEventListener('mouseleave', function() {
+            cornerText.innerHTML = '🔊';
+            cornerText.style.opacity = '1';
+        });
+    </script>
+
 </div>
 </body>
 </html>
